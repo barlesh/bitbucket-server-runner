@@ -1,0 +1,1 @@
+docker-compose -f bb-server-official.yaml --env-file ./.env up -d

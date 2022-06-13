@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+  bitbucket:
+    image: atlassian/bitbucket
+    volumes:
+      - bitbucketVolume:/var/atlassian/application-data/bitbucket
+    ports:
+      - '$SERVER_PORT:$SERVER_PORT'
+      - '$EXTERNAL_SSH_PORT:$EXTERNAL_SSH_PORT'
+    networks:
+      - ops-network
+networks:
+  ops-network:
+    name: ops-network
+volumes:
+  bitbucketVolume:
+    name: bitbucketVolume
